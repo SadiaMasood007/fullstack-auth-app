@@ -18,7 +18,7 @@ export default function Dashboard() {
 
   const fetchMyProfile = async () => {
     const token = localStorage.getItem("token");
-    const res = await fetch("http://localhost:5000/api/me", {
+    const res = await fetch(`${import.meta.env.VITE_URL_vercel}/api/me`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     const data = await res.json();
@@ -28,7 +28,7 @@ export default function Dashboard() {
 
   const fetchUsers = async () => {
     const token = localStorage.getItem("token");
-    const res = await fetch("http://localhost:5000/api/users", {
+    const res = await fetch(`${import.meta.env.VITE_URL_vercel}/api/users`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     const data = await res.json();
@@ -43,7 +43,7 @@ export default function Dashboard() {
     formData.append("gender", editData.gender);
     if (editData.image) formData.append("image", editData.image);
 
-    const res = await fetch("http://localhost:5000/api/me", {
+    const res = await fetch(`${import.meta.env.VITE_URL_vercel}/api/me`, {
       method: "PUT",
       headers: { Authorization: `Bearer ${token}` },
       body: formData,
