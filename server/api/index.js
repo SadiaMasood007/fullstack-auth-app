@@ -19,4 +19,6 @@ app.use("/api", uploadRoutes);
 app.use("/api", authRoutes);
 app.get("/", (req, res) => res.send("Server running"));
 
-export default app;
+app.listen(process.env.PORT || 5000, () =>
+  console.log(`Server listening on ${process.env.PORT || 5000}`)
+);
