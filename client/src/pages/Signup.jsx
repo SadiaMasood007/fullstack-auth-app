@@ -60,7 +60,7 @@ export default function Signup() {
       });
       if (imageFile) formData.append("image", imageFile);
 
-      const res = await fetch("${import.meta.env.VITE_URL}/api/signup", {
+      const res = await fetch(`${import.meta.env.VITE_URL}/api/signup`, {
         method: "POST",
         body: formData,
       });
