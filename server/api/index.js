@@ -1,10 +1,10 @@
-// /api/index.js
+// /index.js or /server.js
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import authRoutes from "../routes/auth.js";
-import uploadRoutes from "../routes/upload.js";
-import serverless from "serverless-http"; 
+import authRoutes from "./routes/auth.js";
+import uploadRoutes from "./routes/upload.js";
+
 // Load .env
 dotenv.config();
 
@@ -24,9 +24,8 @@ app.use("/api/upload", uploadRoutes);
 app.use("/api/auth", authRoutes);
 app.get("/api", (req, res) => res.send("API root"));
 
-// 👇 Export as Vercel-compatible handler
-// export default function handler(req, res) {
-//   res.status(200).json({ message: "Hello from Vercel!" });
-// }
-
-export default serverless(app);
+// Start server
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
