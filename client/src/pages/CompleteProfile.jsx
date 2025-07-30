@@ -24,7 +24,7 @@ export default function CompleteProfile() {
     formData.append("gender", gender);
     if (image) formData.append("image", image);
 
-    const res = await fetch(`${import.meta.env.VITE_URL_vercel}/api/me`, {
+    const res = await fetch(`${import.meta.env.VITE_URL}/api/me`, {
       method: "PUT",
       headers: { Authorization: `Bearer ${token}` },
       body: formData,

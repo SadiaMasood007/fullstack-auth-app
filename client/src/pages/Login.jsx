@@ -22,7 +22,7 @@ export default function Login() {
 
   const onSubmit = async (data) => {
     try {
-      const res = await fetch(`${import.meta.env.VITE_URL_vercel}/api/login`, {
+      const res = await fetch(`${import.meta.env.VITE_URL}/api/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -80,7 +80,8 @@ export default function Login() {
           <div className="mt-4 flex justify-center">
             <GoogleLogin
               onSuccess={(res) => {
-                fetch(`${import.meta.env.VITE_URL_vercel}/api/oauth/google-login`, {                  method: "POST",
+                fetch(`${import.meta.env.VITE_URL}/api/oauth/google-login`, {                 
+                   method: "POST",
                   headers: { "Content-Type": "application/json" },
                   body: JSON.stringify({ token: res.credential }),
                 })

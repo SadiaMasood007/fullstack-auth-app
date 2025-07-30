@@ -30,7 +30,7 @@ export default function Signup() {
   const handleGoogleSignup = async (credentialResponse) => {
     try {
       const token = credentialResponse.credential;
-      const res = await fetch(`${import.meta.env.VITE_URL_vercel}/api/oauth/google-signup`, {
+      const res = await fetch(`${import.meta.env.VITE_URL}/api/oauth/google-signup`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ token }),
@@ -60,7 +60,7 @@ export default function Signup() {
       });
       if (imageFile) formData.append("image", imageFile);
 
-      const res = await fetch("${import.meta.env.VITE_URL_vercel}/api/signup", {
+      const res = await fetch("${import.meta.env.VITE_URL}/api/signup", {
         method: "POST",
         body: formData,
       });
