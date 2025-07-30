@@ -142,9 +142,9 @@ export default function Dashboard() {
               </CardHeader>
               <CardContent className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
                 {filteredUsers.map((user) => (
-                  <div
-                    key={user.id}
-                    className="border rounded-lg p-4 text-center bg-gray-50 hover:shadow-md transition-shadow"
+                  <Link to={`/user/${user.id}`} key={user.id}>
+                  
+                  <div  className="border rounded-lg p-4 text-center bg-gray-50 hover:shadow-md transition-shadow"
                   >
                     <img
                       src={user.image || "/default-avatar.png"}
@@ -154,6 +154,7 @@ export default function Dashboard() {
                     <h3 className="mt-2 font-semibold text-gray-800">{user.name}</h3>
                     <p className="text-sm text-gray-600">{user.email}</p>
                   </div>
+                  </Link>
                 ))}
               </CardContent>
             </Card>

@@ -1,6 +1,6 @@
 import express from "express";
 import jwt from "jsonwebtoken";
-import { signup, login, googleOAuthLogin, googleOAuthSignup, getUsers, getMyProfile, updateMyProfile ,authenticate} from "../controllers/authController.js";
+import { signup, login, googleOAuthLogin, googleOAuthSignup, getUsers, getMyProfile, updateMyProfile ,authenticate ,getUserById} from "../controllers/authController.js";
 
 
 const router = express.Router();
@@ -18,6 +18,7 @@ router.post("/oauth/google-signup", googleOAuthSignup);
 router.get("/users", authenticate, getUsers);
 router.get("/me", authenticate, getMyProfile);
 router.put("/me", authenticate, updateMyProfile);
+router.get("/user/:id", getUserById);
 
 
 export default router;

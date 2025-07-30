@@ -5,6 +5,7 @@ import Signup from "./pages/Signup.jsx";
 import Login from "./pages/Login.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import CompleteProfile from "./pages/CompleteProfile.jsx";
+import UserProfile from "./pages/UserProfile.jsx";
 export default function App() {
   const token = localStorage.getItem("token");
 
@@ -19,6 +20,8 @@ export default function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/complete-profile" element={<CompleteProfile />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/user/:id" element={<UserProfile />} />
+
         </Routes>
       </BrowserRouter>
     </GoogleOAuthProvider></div>
