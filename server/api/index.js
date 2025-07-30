@@ -20,9 +20,9 @@ app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true, limit: "10mb" }));
 
 // Routes
-app.use("/api/upload", uploadRoutes);
-app.use("/api/auth", authRoutes);
-app.get("/api", (req, res) => res.send("API root"));
+app.use("/api", uploadRoutes);
+app.use("/api", authRoutes);
+app.get("/", (req, res) => res.send("API root"));
 
 // Start server
 const PORT = process.env.PORT || 8080;
