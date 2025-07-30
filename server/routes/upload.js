@@ -1,4 +1,3 @@
-// routes/upload.js
 import express from "express";
 import cloudinary from "../utils/cloudinary.js";
 
