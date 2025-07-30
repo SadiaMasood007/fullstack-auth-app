@@ -5,7 +5,6 @@ import dotenv from "dotenv";
 import authRoutes from "../routes/auth.js";
 import uploadRoutes from "../routes/upload.js";
 import serverless from "serverless-http"; 
-
 // Load .env
 dotenv.config();
 
