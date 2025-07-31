@@ -28,4 +28,8 @@ fullstack-auth-app/
 └── README.md 
 
 ---
+## 🚀 Live Deployments
+
+- **Frontend** (Netlify): [https://authenticate-app-front.netlify.app](https://authenticate-app-front.netlify.app)
+- **Backend** (Railway): [https://fullstack-auth-app-production-d86a.up.railway.app](https://fullstack-auth-app-production-d86a.up.railway.app)
 
