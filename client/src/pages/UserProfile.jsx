@@ -15,7 +15,7 @@ export default function UserProfile() {
   if (!user) return <div className="text-center mt-20 text-lg text-gray-500">Loading profile...</div>;
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100 px-4">
+    <div className="flex justify-center items-center w-screen min-h-screen bg-gray-100 px-4">
       <div className="w-full max-w-lg bg-white rounded-2xl shadow-lg p-8">
         <div className="flex flex-col items-center text-center">
           <img
