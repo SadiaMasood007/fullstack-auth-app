@@ -12,7 +12,7 @@ export default function UserProfile() {
       .catch((err) => console.error(err));
   }, [id]);
 
-  if (!user) return <div className="text-center mt-20 text-lg text-gray-500">Loading profile...</div>;
+  if (!user) return <div className="w-screen text-center mt-20 text-lg text-gray-500">Loading profile...</div>;
 
   return (
     <div className="flex justify-center items-center w-screen min-h-screen bg-gray-100 px-4">
@@ -21,7 +21,7 @@ export default function UserProfile() {
           <img
             src={user.image || "/default-avatar.png"}
             alt="Profile"
-            className="w-28 h-28 rounded-full border-4 border-gray-200 shadow-md"
+            className="w-28 h-28 rounded-full border-4 border-gray-200 shadow-md object-cover"
           />
           <h2 className="text-2xl font-semibold text-gray-800 mt-4">{user.name}</h2>
           <p className="text-gray-500">{user.email}</p>
